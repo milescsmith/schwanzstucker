@@ -1,2 +1,10 @@
 # package_parts
-tired of looking for which repo I put the most recent version of python package boilerplate
+Would it be more appropriate to make a [cookiecutter](https://www.cookiecutter.io/) or [copier]() template? 
+
+Sure.
+
+Do I want to take the time right now to learn yet *another* tool?
+
+No.
+
+So, dumping the boilerplate parts of Python packages here.
