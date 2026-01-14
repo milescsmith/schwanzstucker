@@ -5,13 +5,42 @@ description = ""
 authors = [
     { name = "Miles Smith", email = "miles-smith@omrf.org" }
 ]
-license = "BSD-3-Clause"
-readme = "README.md"
+license = {text = "BSD-3-Clause"}
+readme = {file = "README.md", content-type="text/markdown"}
 requires-python = ">=3.12"
 dependencies = []
+classifiers = [
+    "Programming Language :: Python",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Rust",
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "Typing :: Typed",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+[project.urls]
+homepage = "https://github.com/user/package"
+repository = "https://github.com/user/package"
+changelog = "https://github.com/user/package/CHANGELOG.md"
+
+[project.optional-dependencies]
+extra = [
+    "extra_package>=1.2.2",
+    "extra_github_package @ git+https://github.com/user/package",
+]
 
 [project.scripts]
-trackplot = "trackplot.cli:main"
+package = "package.module:func"
 
 [build-system]
 requires = ["hatchling"]
@@ -22,4 +51,30 @@ dev = [
     "ruff>=0.14.11",
     "ty>=0.0.11",
 ]
+tests = [
+    "codecov>=2.1.13",
+    "coverage>=7.8.0",
+    "nox>=2025.5.1",
+    "pytest>=8.3.5",
+    "pytest-xdist>=3.6.1",
+]
+
+
+[tool.coverage.paths]
+source = ["src", "*/site-packages"]
+
+[tool.coverage.run]
+branch = true
+source = ["package"]
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 100
+
+[tool.pytest.ini_options]
+pythonpath = "."
+addopts = [
+    "--import-mode=importlib",
+]
+typeguard-packages = "package"
 
