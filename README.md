@@ -1,4 +1,5 @@
-# package_parts
+# schwanzstucker
+
 Would it be more appropriate to make a [cookiecutter](https://www.cookiecutter.io/) or [copier]() template? 
 
 Sure.
