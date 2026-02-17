@@ -1,3 +1,7 @@
+[build-system]
+requires = ["uv_build>=0.7.0,<0.11.0"]
+build-backend = "uv_build"
+
 [project]
 name = "this_package"
 version = "0.0.1"
@@ -42,9 +46,6 @@ extra = [
 [project.scripts]
 package = "package.module:func"
 
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
 
 [dependency-groups]
 dev = [
